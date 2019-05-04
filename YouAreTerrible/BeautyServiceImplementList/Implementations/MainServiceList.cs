@@ -1,4 +1,7 @@
-﻿using BeautyServiceDAL.Interfaces;
+﻿using BeautyModel;
+using BeautyServiceDAL.BindingModels;
+using BeautyServiceDAL.Interfaces;
+using BeautyServiceDAL.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,72 +17,60 @@ namespace BeautyServiceImplementList.Implementations
         {
             source = DataListSingleton.GetInstance();
         }
-        public List<OrderViewModel> GetList()
+        public List<ApplicationViewModel> GetList()
         {
-            List<OrderViewModel> result = new List<OrderViewModel>();
-            for (int i = 0; i < source.Orders.Count; ++i)
+            List<ApplicationViewModel> result = new List<ApplicationViewModel>();
+            for (int i = 0; i < source.Applications.Count; ++i)
             {
-                string clientFIO = string.Empty;
-                for (int j = 0; j < source.Clients.Count; ++j)
-                {
-                    if (source.Clients[j].Id == source.Orders[i].ClientId)
-                    {
-                        clientFIO = source.Clients[j].ClientFIO;
-                        break;
-                    }
-                }
                 string productName = string.Empty;
-                for (int j = 0; j < source.Products.Count; ++j)
+                for (int j = 0; j < source.Resourses.Count; ++j)
                 {
-                    if (source.Products[j].Id == source.Orders[i].ProductId)
+                    if (source.Resourses[j].ResourseId == source.Applications[i].ResourseId)
                     {
-                        productName = source.Products[j].ProductName;
+                        productName = source.Resourses[j].ResourseName;
                         break;
                     }
                 }
-                result.Add(new OrderViewModel
+                result.Add(new ApplicationViewModel
                 {
-                    Id = source.Orders[i].Id,
-                    ClientId = source.Orders[i].ClientId,
-                    ClientFIO = clientFIO,
-                    ProductId = source.Orders[i].ProductId,
-                    ProductName = productName,
-                    Count = source.Orders[i].Count,
-                    Sum = source.Orders[i].Sum,
-                    DateCreate = source.Orders[i].DateCreate.ToLongDateString(),
-                    DateImplement = source.Orders[i].DateImplement?.ToLongDateString(),
-                    Status = source.Orders[i].Status.ToString()
+                    ApplicationId = source.Applications[i].ApplicationId,
+                    ResourseId = source.Applications[i].ResourseId,
+                    ResourseName = productName,
+                    Count = source.Applications[i].Count,
+                    Summa = source.Applications[i].Summa,
+                    DateCreate = source.Applications[i].DateCreate.ToLongDateString(),
+                    DateImplement = source.Applications[i].DateImplement?.ToLongDateString(),
+                    Status = source.Applications[i].Status.ToString()
                 });
             }
             return result;
         }
-        public void CreateOrder(OrderBindingModel model)
+        public void CreateApplication(ApplicationBindingModel model)
         {
             int maxId = 0;
-            for (int i = 0; i < source.Orders.Count; ++i)
+            for (int i = 0; i < source.Applications.Count; ++i)
             {
-                if (source.Orders[i].Id > maxId)
+                if (source.Applications[i].ApplicationId > maxId)
                 {
-                    maxId = source.Orders[i].Id;
+                    maxId = source.Applications[i].ApplicationId;
                 }
             }
-            source.Orders.Add(new Order
+            source.Applications.Add(new Application
             {
-                Id = maxId + 1,
-                ClientId = model.ClientId,
-                ProductId = model.ProductId,
+                ApplicationId = maxId + 1,
+                ResourseId = model.ResourseId,
                 DateCreate = DateTime.Now,
                 Count = model.Count,
-                Sum = model.Sum,
-                Status = OrderStatus.Принят
+                Summa = model.Summa,
+                Status = ApplicationStatus.Создана
             });
         }
-        public void TakeOrderInWork(OrderBindingModel model)
+        public void SendApplication(ApplicationBindingModel model)
         {
             int index = -1;
-            for (int i = 0; i < source.Orders.Count; ++i)
+            for (int i = 0; i < source.Applications.Count; ++i)
             {
-                if (source.Orders[i].Id == model.Id)
+                if (source.Applications[i].ApplicationId == model.ApplicationId)
                 {
                     index = i;
                     break;
@@ -89,19 +80,19 @@ namespace BeautyServiceImplementList.Implementations
             {
                 throw new Exception("Элемент не найден");
             }
-            if (source.Orders[index].Status != OrderStatus.Принят)
+            if (source.Applications[index].Status != ApplicationStatus.Создана)
             {
-                throw new Exception("Заказ не в статусе \"Принят\"");
+                throw new Exception("Заявка не в статусе \"Создана\"");
             }
-            source.Orders[index].DateImplement = DateTime.Now;
-            source.Orders[index].Status = OrderStatus.Выполняется;
+            source.Applications[index].DateImplement = DateTime.Now;
+            source.Applications[index].Status = ApplicationStatus.Отправлена;
         }
-        public void FinishOrder(OrderBindingModel model)
+        public void FinishApplication(ApplicationBindingModel model)
         {
             int index = -1;
-            for (int i = 0; i < source.Orders.Count; ++i)
+            for (int i = 0; i < source.Applications.Count; ++i)
             {
-                if (source.Orders[i].Id == model.Id)
+                if (source.Applications[i].ApplicationId == model.ApplicationId)
                 {
                     index = i;
                     break;
@@ -111,32 +102,11 @@ namespace BeautyServiceImplementList.Implementations
             {
                 throw new Exception("Элемент не найден");
             }
-            if (source.Orders[index].Status != OrderStatus.Выполняется)
+            if (source.Applications[index].Status != ApplicationStatus.Отправлена)
             {
-                throw new Exception("Заказ не в статусе \"Выполняется\"");
+                throw new Exception("Заявка не в статусе \"Отправлена\"");
             }
-            source.Orders[index].Status = OrderStatus.Готов;
-        }
-        public void PayOrder(OrderBindingModel model)
-        {
-            int index = -1;
-            for (int i = 0; i < source.Orders.Count; ++i)
-            {
-                if (source.Orders[i].Id == model.Id)
-                {
-                    index = i;
-                    break;
-                }
-            }
-            if (index == -1)
-            {
-                throw new Exception("Элемент не найден");
-            }
-            if (source.Orders[index].Status != OrderStatus.Готов)
-            {
-                throw new Exception("Заказ не в статусе \"Готов\"");
-            }
-            source.Orders[index].Status = OrderStatus.Оплачен;
+            source.Applications[index].Status = ApplicationStatus.Выполнена;
         }
     }
 }
