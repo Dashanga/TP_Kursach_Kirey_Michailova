@@ -1,16 +1,15 @@
-﻿using System;
+﻿using BeautyServiceDAL.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ForgeServiceDAL.Interfaces;
 
-namespace PizzeriaWebView.Controllers
+namespace BeautyViewWeb.Controllers
 {
-    public class PizzasController : Controller
+    public class ServicesController : Controller
     {
-        public IPizzaService service = Globals.PizzaService;
-        // GET: Pizzas
+        public IServiceService service = Globals.ServiceService;
         public ActionResult Index()
         {
             return View(service.GetList());

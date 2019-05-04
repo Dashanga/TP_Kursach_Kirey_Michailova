@@ -30,7 +30,7 @@ namespace BeautyViewWeb.Controllers
         {
             service.AddElement( new ResourseBindingModel
             {
-                ResourseName = Request["IngredientName"]
+                ResourseName = Request["ResourseName"]
             });
             return RedirectToAction("Index");
         }
@@ -40,10 +40,10 @@ namespace BeautyViewWeb.Controllers
         public ActionResult Edit(int id)
         {
             var viewModel = service.GetElement(id);
-            var bindingModel = new IngredientBindingModel
+            var bindingModel = new ResourseBindingModel
             {
-                IngredientId = id,
-                IngredientName = viewModel.IngredientName
+                ResourseId = id,
+                ResourseName = viewModel.ResourseName
             };
             return View(bindingModel);
         }
@@ -52,10 +52,10 @@ namespace BeautyViewWeb.Controllers
         [HttpPost]
         public ActionResult EditPost()
         {
-            service.UpdElement(new IngredientBindingModel
+            service.UpdElement(new ResourseBindingModel
             {
-                IngredientId = int.Parse(Request["IngredientId"]),
-                IngredientName = Request["IngredientName"]
+                ResourseId = int.Parse(Request["ResourseId"]),
+                ResourseName = Request["ResourseName"]
             });
             return RedirectToAction("Index");
         }

@@ -125,9 +125,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResoursesController.cs" />
-    <Compile Include="Controllers\PizzaOrderController.cs" />
-    <Compile Include="Controllers\PizzaController.cs" />
-    <Compile Include="Controllers\PizzasController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
