@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ForgeServiceDAL.Interfaces;
-using ForgeServiceImplementList.Implementations;
 
 namespace BeautyViewWeb.Controllers
 {
@@ -17,17 +15,17 @@ namespace BeautyViewWeb.Controllers
         
         public ActionResult Resourses()
         {
-            return RedirectToAction("Index", "Ресурсы");
+            return RedirectToAction("Index", "Resourses");
         }
 
-        public ActionResult Pizzas()
+        public ActionResult Services()
         {
-            return RedirectToAction("Index", "Услуги");
+            return RedirectToAction("Index", "Services");
         }
 
-        public ActionResult PizzaOrders()
+        public ActionResult Applications()
         {
-            return RedirectToAction("Index", "Заявки");
+            return RedirectToAction("Index", "Applications");
         }
     }
 }

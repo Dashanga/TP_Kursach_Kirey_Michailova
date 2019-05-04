@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ForgeServiceDAL.ViewModel.CustomerViewModel>
+﻿@model IEnumerable<BeautyServiceDAL.ViewModels.ResourseViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -13,7 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FullName)
+            @Html.DisplayNameFor(model => model.ResourseName)
         </th>
         <th></th>
     </tr>
@@ -21,11 +21,11 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.FullName)
+            @Html.DisplayFor(modelItem => item.ResourseName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ResourseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ResourseId })
         </td>
     </tr>
 }

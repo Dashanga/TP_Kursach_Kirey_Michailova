@@ -1,5 +1,5 @@
-﻿@using ForgeModel
-@model ForgeServiceDAL.ViewModel.PizzaViewModel
+﻿@using BeautyModel
+@model BeautyServiceDAL.ViewModels.ServiceViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -9,50 +9,50 @@
 <h2>Index</h2>
 
 
-@using (Html.BeginForm("CreatePizzaPost", "Pizza", FormMethod.Post)) 
+@using (Html.BeginForm("CreateServicePost", "Service", FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Pizza's ingredients</h4>
+        <h4>Service's resourses</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PizzaName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ServiceName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PizzaName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PizzaName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.ServiceName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ServiceName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Cost, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ServicePrice, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.ServicePrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ServicePrice, "", new { @class = "text-danger" })
             </div>
         </div>
         
         <div class="form-group">
             <p>
-                @Html.ActionLink("Add", "AddIngredient")
+                @Html.ActionLink("Add", "AddResourse")
             </p>
             <table class="table">
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.PizzaIngredients[0].IngredientName)
+                        @Html.DisplayNameFor(model => model.ServiceResourses[0].ResourseName)
                     </th>
                     <th></th>
                 </tr>
 
-                @foreach (var item in Model.PizzaIngredients) {
+                @foreach (var item in Model.ServiceResourses) {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.IngredientName)
+                            @Html.DisplayFor(modelItem => item.ResourseName)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.PizzaIngredientCount)
+                            @Html.DisplayFor(modelItem => item.Count)
                         </td>
                         <td>
                         </td>

@@ -168,17 +168,14 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Customers\Create.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Customers\Edit.cshtml" />
-    <Content Include="Views\Ingredients\Create.cshtml" />
-    <Content Include="Views\Ingredients\Index.cshtml" />
-    <Content Include="Views\Ingredients\Edit.cshtml" />
-    <Content Include="Views\Pizza\Index.cshtml" />
-    <Content Include="Views\Pizza\AddIngredient.cshtml" />
-    <Content Include="Views\PizzaOrder\Index.cshtml" />
-    <Content Include="Views\PizzaOrder\Create.cshtml" />
-    <Content Include="Views\Pizzas\Index.cshtml" />
+    <Content Include="Views\Resourses\Create.cshtml" />
+    <Content Include="Views\Resourses\Index.cshtml" />
+    <Content Include="Views\Resourses\Edit.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Service\AddResourse.cshtml" />
+    <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Application\Create.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -209,14 +206,6 @@
     <ProjectReference Include="..\BeautyServiceImplementList\BeautyServiceImplementList.csproj">
       <Project>{c339d6cb-cda7-4d95-a59f-05b30f4ebca5}</Project>
       <Name>BeautyServiceImplementList</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ForgeServiceDAL\PizzeriaServiceDAL.csproj">
-      <Project>{61d051ff-8907-42db-be40-950a7991370d}</Project>
-      <Name>PizzeriaServiceDAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ForgeServiceImplementList\PizzeriaServiceImplementList.csproj">
-      <Project>{4827f26d-823f-4fff-8c57-260e1d5c1a09}</Project>
-      <Name>PizzeriaServiceImplementList</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

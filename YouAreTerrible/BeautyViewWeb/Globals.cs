@@ -1,10 +1,9 @@
-﻿using System;
+﻿using BeautyServiceDAL.Interfaces;
+using BeautyServiceImplementList.Implementations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ForgeServiceDAL.Interfaces;
-using ForgeServiceDAL.ViewModel;
-using ForgeServiceImplementList.Implementations;
 
 namespace BeautyViewWeb
 {
