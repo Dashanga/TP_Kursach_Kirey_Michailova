@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyModel", "BeautyModel\BeautyModel.csproj", "{933384EF-C07C-4299-ADF3-31A052E53F56}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyServiceImplementList", "BeautyServiceImplementList\BeautyServiceImplementList.csproj", "{C339D6CB-CDA7-4D95-A59F-05B30F4EBCA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyViewWeb", "BeautyViewWeb\BeautyViewWeb.csproj", "{EEFA7384-E9E0-42CA-B648-397ED94A4504}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyServiceDAL_P", "BeautyServiceDAL_P\BeautyServiceDAL_P.csproj", "{172C154B-4796-44F3-94E5-E9B84C86FA0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{EEFA7384-E9E0-42CA-B648-397ED94A4504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEFA7384-E9E0-42CA-B648-397ED94A4504}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEFA7384-E9E0-42CA-B648-397ED94A4504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172C154B-4796-44F3-94E5-E9B84C86FA0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172C154B-4796-44F3-94E5-E9B84C86FA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172C154B-4796-44F3-94E5-E9B84C86FA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172C154B-4796-44F3-94E5-E9B84C86FA0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B77D052-8AA0-4E3F-8501-9A4257CB2228}
 	EndGlobalSection
 EndGlobal
