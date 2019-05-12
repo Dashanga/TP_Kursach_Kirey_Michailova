@@ -14,6 +14,7 @@ namespace BeautyServiceDAL.Interfaces
         SkladViewModel GetElement(int id);
         void AddElement(SkladBindingModel model);
         void UpdElement(SkladBindingModel model);
-        void DelElement(int id);
+        void DelElement(int id);
+
     }
 }

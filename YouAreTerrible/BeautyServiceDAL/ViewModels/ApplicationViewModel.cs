@@ -19,6 +19,7 @@ namespace BeautyServiceDAL.ViewModels
         [DisplayName("Дата создания")]
         public string DateCreate { get; set; }
         [DisplayName("Дата выполнения")]
-        public string DateImplement { get; set; }
+        public string DateImplement { get; set; }
+
     }
 }
