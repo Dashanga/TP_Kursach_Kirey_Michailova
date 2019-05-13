@@ -11,6 +11,7 @@ namespace BeautyServiceDAL.Interfaces
         ResourseViewModel GetElement(int id);
         void AddElement(ResourseBindingModel model);
         void UpdElement(ResourseBindingModel model);
-        void DelElement(int id);
+        void DelElement(int id);
+
     }
 }
