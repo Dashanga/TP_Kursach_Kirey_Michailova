@@ -45,7 +45,8 @@ namespace BeautyViewWeb.Controllers
             var bindingModel = new ResourseBindingModel
             {
                 ResourseId = id,
-                ResourseName = viewModel.ResourseName
+                ResourseName = viewModel.ResourseName,
+                ResoursePrice = viewModel.ResoursePrice
             };
             return View(bindingModel);
         }
@@ -57,7 +58,8 @@ namespace BeautyViewWeb.Controllers
             service.UpdElement(new ResourseBindingModel
             {
                 ResourseId = int.Parse(Request["ResourseId"]),
-                ResourseName = Request["ResourseName"]
+                ResourseName = Request["ResourseName"],
+                ResoursePrice = decimal.Parse(Request["ResoursePrice"])
             });
             return RedirectToAction("Index");
         }
