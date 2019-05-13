@@ -25,7 +25,9 @@ namespace BeautyServiceImplementList.Implementations
                 result.Add(new ResourseViewModel
                 {
                     ResourseId = source.Resourses[i].ResourseId,
+                    ResoursePrice = source.Resourses[i].ResoursePrice,
                     ResourseName = source.Resourses[i].ResourseName
+
                 });
             }
             return result;
@@ -39,7 +41,8 @@ namespace BeautyServiceImplementList.Implementations
                     return new ResourseViewModel
                     {
                         ResourseId = source.Resourses[i].ResourseId,
-                        ResourseName = source.Resourses[i].ResourseName
+                        ResourseName = source.Resourses[i].ResourseName,
+                        ResoursePrice = source.Resourses[i].ResoursePrice
                     };
                 }
             }
@@ -62,7 +65,8 @@ namespace BeautyServiceImplementList.Implementations
             source.Resourses.Add(new Resourse
             {
                 ResourseId = maxId + 1,
-                ResourseName = model.ResourseName
+                ResourseName = model.ResourseName,
+                ResoursePrice = model.ResoursePrice
             });
         }
         public void UpdElement(ResourseBindingModel model)
@@ -85,6 +89,7 @@ namespace BeautyServiceImplementList.Implementations
                 throw new Exception("Элемент не найден");
             }
             source.Resourses[index].ResourseName = model.ResourseName;
+            source.Resourses[index].ResoursePrice = model.ResoursePrice;
         }
         public void DelElement(int id)
         {

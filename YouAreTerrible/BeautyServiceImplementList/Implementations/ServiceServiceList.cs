@@ -51,7 +51,6 @@ namespace BeautyServiceImplementList.Implementations
                 {
                     ServiceId = source.Services[i].ServiceId,
                     ServiceName = source.Services[i].ServiceName,
-                    ServicePrice = source.Services[i].ServicePrice,
                     ServiceResourses = productComponents
                 });
             }
@@ -91,7 +90,6 @@ namespace BeautyServiceImplementList.Implementations
                     {
                         ServiceId = source.Services[i].ServiceId,
                         ServiceName = source.Services[i].ServiceName,
-                        ServicePrice = source.Services[i].ServicePrice,
                         ServiceResourses = productComponents
                     };
                 }
@@ -115,8 +113,7 @@ namespace BeautyServiceImplementList.Implementations
             source.Services.Add(new Service
             {
                 ServiceId = maxId + 1,
-                ServiceName = model.ServiceName,
-                ServicePrice = model.ServicePrice
+                ServiceName = model.ServiceName
             });
             // компоненты для изделия
             int maxPCId = 0;
@@ -173,7 +170,6 @@ namespace BeautyServiceImplementList.Implementations
                 throw new Exception("Элемент не найден");
             }
             source.Services[index].ServiceName = model.ServiceName;
-            source.Services[index].ServicePrice = model.ServicePrice;
             int maxPCId = 0;
             for (int i = 0; i < source.ServiceResourses.Count; ++i)
             {

@@ -125,7 +125,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResoursesController.cs" />
-    <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\ApplicationsController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -173,8 +173,8 @@
     <Content Include="Views\Resourses\Edit.cshtml" />
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Service\AddResourse.cshtml" />
-    <Content Include="Views\Application\Index.cshtml" />
-    <Content Include="Views\Application\Create.cshtml" />
+    <Content Include="Views\Applications\Index.cshtml" />
+    <Content Include="Views\Applications\Create.cshtml" />
     <Content Include="Views\Services\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -28,9 +28,11 @@ namespace BeautyViewWeb.Controllers
         [HttpPost]
         public ActionResult CreatePost()
         {
-            service.AddElement( new ResourseBindingModel
+            service.AddElement(new ResourseBindingModel
             {
-                ResourseName = Request["ResourseName"]
+                ResourseName = Request["ResourseName"],
+                ResoursePrice = Convert.ToDecimal(Request["ResoursePrice"]),
+
             });
             return RedirectToAction("Index");
         }

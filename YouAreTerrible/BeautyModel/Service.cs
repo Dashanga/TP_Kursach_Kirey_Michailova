@@ -10,7 +10,6 @@ namespace BeautyModel
     {
         public int ServiceId { get; set; }
         public string ServiceName { get; set; }
-        public decimal ServicePrice { get; set; }
         //public virtual List<Application> Applications { get; set; }
     }
 }

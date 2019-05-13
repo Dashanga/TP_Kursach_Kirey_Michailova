@@ -15,6 +15,10 @@
         <th>
             @Html.DisplayNameFor(model => model.ResourseName)
         </th>
+
+		<th>
+			@Html.DisplayNameFor(model => model.ResoursePrice)
+		</th>
         <th></th>
     </tr>
 
@@ -23,6 +27,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.ResourseName)
         </td>
+
+		<td>
+			@Html.DisplayFor(modelItem => item.ResoursePrice)
+		</td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ResourseId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ResourseId })
