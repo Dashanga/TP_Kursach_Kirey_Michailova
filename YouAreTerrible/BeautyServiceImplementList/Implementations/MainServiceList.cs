@@ -5,8 +5,6 @@ using BeautyServiceDAL.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeautyServiceImplementList.Implementations
 {
@@ -19,42 +17,25 @@ namespace BeautyServiceImplementList.Implementations
         }
         public List<ApplicationViewModel> GetList()
         {
-            List<ApplicationViewModel> result = new List<ApplicationViewModel>();
-            for (int i = 0; i < source.Applications.Count; ++i)
+            List<ApplicationViewModel> result = source.Applications
+            .Select(rec => new ApplicationViewModel
             {
-                string productName = string.Empty;
-                for (int j = 0; j < source.Resourses.Count; ++j)
-                {
-                    if (source.Resourses[j].ResourseId == source.Applications[i].ResourseId)
-                    {
-                        productName = source.Resourses[j].ResourseName;
-                        break;
-                    }
-                }
-                result.Add(new ApplicationViewModel
-                {
-                    ApplicationId = source.Applications[i].ApplicationId,
-                    ResourseId = source.Applications[i].ResourseId,
-                    ResourseName = productName,
-                    Count = source.Applications[i].Count,
-                    Summa = source.Applications[i].Summa,
-                    DateCreate = source.Applications[i].DateCreate.ToLongDateString(),
-                    DateImplement = source.Applications[i].DateImplement?.ToLongDateString(),
-                    Status = source.Applications[i].Status.ToString()
-                });
-            }
+                 ApplicationId = rec.ApplicationId,
+                 ResourseId = rec.ResourseId,
+                 DateCreate = rec.DateCreate.ToLongDateString(),
+                 DateImplement = rec.DateImplement?.ToLongDateString(),
+                 Status = rec.Status.ToString(),
+                 Count = rec.Count,
+                 Summa = rec.Summa,
+                 ResourseName = source.Resourses.FirstOrDefault(recP => recP.ResourseId ==
+                 rec.ResourseId)?.ResourseName,
+            })
+            .ToList();
             return result;
         }
         public void CreateApplication(ApplicationBindingModel model)
         {
-            int maxId = 0;
-            for (int i = 0; i < source.Applications.Count; ++i)
-            {
-                if (source.Applications[i].ApplicationId > maxId)
-                {
-                    maxId = source.Applications[i].ApplicationId;
-                }
-            }
+            int maxId = source.Applications.Count > 0 ? source.Applications.Max(rec => rec.ApplicationId) : 0;
             source.Applications.Add(new Application
             {
                 ApplicationId = maxId + 1,
@@ -67,46 +48,30 @@ namespace BeautyServiceImplementList.Implementations
         }
         public void SendApplication(ApplicationBindingModel model)
         {
-            int index = -1;
-            for (int i = 0; i < source.Applications.Count; ++i)
-            {
-                if (source.Applications[i].ApplicationId == model.ApplicationId)
-                {
-                    index = i;
-                    break;
-                }
-            }
-            if (index == -1)
+            Application element = source.Applications.FirstOrDefault(rec => rec.ApplicationId == model.ApplicationId);
+            if (element == null)
             {
                 throw new Exception("Элемент не найден");
             }
-            if (source.Applications[index].Status != ApplicationStatus.Создана)
+            if (element.Status != ApplicationStatus.Создана)
             {
                 throw new Exception("Заявка не в статусе \"Создана\"");
             }
-            source.Applications[index].DateImplement = DateTime.Now;
-            source.Applications[index].Status = ApplicationStatus.Отправлена;
+            element.DateImplement = DateTime.Now;
+            element.Status = ApplicationStatus.Отправлена;
         }
         public void FinishApplication(ApplicationBindingModel model)
         {
-            int index = -1;
-            for (int i = 0; i < source.Applications.Count; ++i)
-            {
-                if (source.Applications[i].ApplicationId == model.ApplicationId)
-                {
-                    index = i;
-                    break;
-                }
-            }
-            if (index == -1)
+            Application element = source.Applications.FirstOrDefault(rec => rec.ApplicationId == model.ApplicationId);
+            if (element == null)
             {
                 throw new Exception("Элемент не найден");
             }
-            if (source.Applications[index].Status != ApplicationStatus.Отправлена)
+            if (element.Status != ApplicationStatus.Отправлена)
             {
                 throw new Exception("Заявка не в статусе \"Отправлена\"");
             }
-            source.Applications[index].Status = ApplicationStatus.Выполнена;
+            element.Status = ApplicationStatus.Выполнена;
         }
     }
 }

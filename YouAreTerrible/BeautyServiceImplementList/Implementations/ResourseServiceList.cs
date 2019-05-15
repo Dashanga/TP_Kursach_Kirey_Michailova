@@ -5,8 +5,6 @@ using BeautyServiceDAL.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeautyServiceImplementList.Implementations
 {
@@ -19,49 +17,40 @@ namespace BeautyServiceImplementList.Implementations
         }
         public List<ResourseViewModel> GetList()
         {
-            List<ResourseViewModel> result = new List<ResourseViewModel>();
-            for (int i = 0; i < source.Resourses.Count; ++i)
+            List<ResourseViewModel> result = source.Resourses.Select(rec => new
+            ResourseViewModel
             {
-                result.Add(new ResourseViewModel
-                {
-                    ResourseId = source.Resourses[i].ResourseId,
-                    ResoursePrice = source.Resourses[i].ResoursePrice,
-                    ResourseName = source.Resourses[i].ResourseName
-
-                });
-            }
+                ResourseId = rec.ResourseId,
+                ResourseName = rec.ResourseName,
+                ResoursePrice = rec.ResoursePrice
+            })
+            .ToList();
             return result;
         }
         public ResourseViewModel GetElement(int id)
         {
-            for (int i = 0; i < source.Resourses.Count; ++i)
+            Resourse element = source.Resourses.FirstOrDefault(rec => rec.ResourseId == id);
+            if (element != null)
             {
-                if (source.Resourses[i].ResourseId == id)
+                return new ResourseViewModel
                 {
-                    return new ResourseViewModel
-                    {
-                        ResourseId = source.Resourses[i].ResourseId,
-                        ResourseName = source.Resourses[i].ResourseName,
-                        ResoursePrice = source.Resourses[i].ResoursePrice
-                    };
-                }
+                    ResourseId = element.ResourseId,
+                    ResourseName = element.ResourseName,
+                    ResoursePrice = element.ResoursePrice
+                };
             }
             throw new Exception("Элемент не найден");
         }
         public void AddElement(ResourseBindingModel model)
         {
-            int maxId = 0;
-            for (int i = 0; i < source.Resourses.Count; ++i)
+            Resourse element = source.Resourses.FirstOrDefault(rec => rec.ResourseName
+            == model.ResourseName);
+            if (element != null)
             {
-                if (source.Resourses[i].ResourseId > maxId)
-                {
-                    maxId = source.Resourses[i].ResourseId;
-                }
-                if (source.Resourses[i].ResourseName == model.ResourseName)
-                {
-                    throw new Exception("Уже есть ресурс с таким названием");
-                }
+                throw new Exception("Уже есть ресурс с таким названием");
             }
+            int maxId = source.Resourses.Count > 0 ? source.Resourses.Max(rec =>
+           rec.ResourseId) : 0;
             source.Resourses.Add(new Resourse
             {
                 ResourseId = maxId + 1,
@@ -71,37 +60,31 @@ namespace BeautyServiceImplementList.Implementations
         }
         public void UpdElement(ResourseBindingModel model)
         {
-            int index = -1;
-            for (int i = 0; i < source.Resourses.Count; ++i)
+            Resourse element = source.Resourses.FirstOrDefault(rec => rec.ResourseName
+            == model.ResourseName && rec.ResourseId != model.ResourseId);
+            if (element != null)
             {
-                if (source.Resourses[i].ResourseId == model.ResourseId)
-                {
-                    index = i;
-                }
-                if (source.Resourses[i].ResourseName == model.ResourseName &&
-                source.Resourses[i].ResourseId != model.ResourseId)
-                {
-                    throw new Exception("Уже есть ресурс с таким названием");
-                }
+                throw new Exception("Уже есть ресурс с таким названием");
             }
-            if (index == -1)
+            element = source.Resourses.FirstOrDefault(rec => rec.ResourseId == model.ResourseId);
+            if (element == null)
             {
                 throw new Exception("Элемент не найден");
             }
-            source.Resourses[index].ResourseName = model.ResourseName;
-            source.Resourses[index].ResoursePrice = model.ResoursePrice;
-        }
+            element.ResourseName = model.ResourseName;
+            element.ResoursePrice = model.ResoursePrice;
+        }
         public void DelElement(int id)
         {
-            for (int i = 0; i < source.Resourses.Count; ++i)
+            Resourse element = source.Resourses.FirstOrDefault(rec => rec.ResourseId == id);
+            if (element != null)
             {
-                if (source.Resourses[i].ResourseId == id)
-                {
-                    source.Resourses.RemoveAt(i);
-                    return;
-                }
+                source.Resourses.Remove(element);
             }
-            throw new Exception("Элемент не найден");
+            else
+            {
+                throw new Exception("Элемент не найден");
+            }
         }
     }
 }
