@@ -10,7 +10,6 @@ namespace BeautyServiceDAL.BindingModels
     {
         public int ServiceId { get; set; }
         public string ServiceName { get; set; }
-        public decimal ServicePrice { get; set; }
         public List<ServiceResourseBindingModel> ServiceResourses { get; set; }
     }
 }

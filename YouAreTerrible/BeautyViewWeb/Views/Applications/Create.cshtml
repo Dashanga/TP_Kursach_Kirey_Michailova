@@ -8,7 +8,7 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm("CreatePost", "Application", FormMethod.Post)) 
+@using (Html.BeginForm("CreatePost", "Applications", FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     
@@ -20,7 +20,7 @@
 		        <div class="form-group">
             @Html.LabelFor(model => model.ResourseId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ResourseId", ViewBag.Resourses as SelectList)
+                @Html.DropDownList("ResourseName", ViewBag.Resourses as SelectList)
             </div>
         </div>
 

@@ -13,8 +13,6 @@ namespace BeautyServiceDAL.ViewModels
         public int ServiceId { get; set; }
         [DisplayName("Название услуги")]
         public string ServiceName { get; set; }
-        [DisplayName("Цена")]
-        public decimal ServicePrice { get; set; }
         public List<ServiceResourseViewModel> ServiceResourses { get; set; }
     }
 }

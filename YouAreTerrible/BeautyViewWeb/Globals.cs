@@ -12,5 +12,6 @@ namespace BeautyViewWeb
         public static IResourseService ResourseService { get; } = new ResourseServiceList();
         public static IServiceService ServiceService { get; } = new ServiceServiceList();
         public static IMainService MainService { get; } = new MainServiceList();
+        public static ISkladService SkladService { get; } = new SkladServiceList();
     }
 }

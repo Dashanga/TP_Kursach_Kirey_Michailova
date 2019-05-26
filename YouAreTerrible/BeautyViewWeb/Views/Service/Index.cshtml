@@ -25,14 +25,6 @@
                 @Html.ValidationMessageFor(model => model.ServiceName, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ServicePrice, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ServicePrice, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ServicePrice, "", new { @class = "text-danger" })
-            </div>
-        </div>
         
         <div class="form-group">
             <p>

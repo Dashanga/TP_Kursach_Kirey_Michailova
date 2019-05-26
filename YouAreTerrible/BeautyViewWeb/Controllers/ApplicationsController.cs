@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BeautyViewWeb.Controllers
 {
-    public class ApplicationController : Controller
+    public class ApplicationsController : Controller
     {
         private IResourseService resoursesService = Globals.ResourseService;
         private IMainService mainService = Globals.MainService;
@@ -29,7 +29,7 @@ namespace BeautyViewWeb.Controllers
         [HttpPost]
         public ActionResult CreatePost()
         {
-            var resourseId = int.Parse(Request["ResourseId"]);
+            var resourseId = int.Parse(Request["ResourseName"]);
             var resourseCount = int.Parse(Request["Count"]);
             var totalCost = CalcSum(resourseId, resourseCount);
 

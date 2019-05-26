@@ -19,9 +19,6 @@
         <th>
             @Html.DisplayNameFor(model => model.ServiceName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ServicePrice)
-        </th>
         <th></th>
     </tr>
 
@@ -34,10 +31,6 @@
             @Html.DisplayFor(modelItem => item.ServiceName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ServicePrice)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ServiceId}) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ServiceId})
         </td>
     </tr>

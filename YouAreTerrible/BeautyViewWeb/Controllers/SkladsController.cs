@@ -1,19 +1,26 @@
 ﻿using BeautyServiceDAL.BindingModels;
 using BeautyServiceDAL.Interfaces;
-using System;
+using BeautyViewWeb;
 using System.Web.Mvc;
 
-namespace BeautyViewWeb.Controllers
+namespace PizzeriaWebView.Controllers
 {
-    public class ResoursesController : Controller
+    public class SkladsController : Controller
     {
-        private IResourseService service = Globals.ResourseService;
-        // GET: Ingredients
+        private ISkladService service = Globals.SkladService;
+        private IResourseService ingredientService = Globals.ResourseService;
+
         public ActionResult Index()
         {
             return View(service.GetList());
         }
 
+        public ActionResult AddResourse()
+        {
+            var ingredients = new SelectList(ingredientService.GetList(), "ResourseId", "ResourseName");
+            ViewBag.Resourses = ingredients;
+            return View();
+        }
 
         // GET: Ingredients/Create
         public ActionResult Create()
@@ -25,9 +32,9 @@ namespace BeautyViewWeb.Controllers
         [HttpPost]
         public ActionResult CreatePost()
         {
-            service.AddElement(new ResourseBindingModel
+            service.AddElement(new SkladBindingModel
             {
-                ResourseName = Request["ResourseName"],
+                SkladName = Request["SkladName"],
                 ResoursePrice = Convert.ToDecimal(Request["ResoursePrice"]),
 
             });
@@ -68,5 +75,7 @@ namespace BeautyViewWeb.Controllers
             service.DelElement(id);
             return RedirectToAction("Index");
         }
+
+
     }
 }
