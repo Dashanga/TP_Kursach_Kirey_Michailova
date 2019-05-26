@@ -10,10 +10,7 @@ namespace BeautyServiceDAL_P.Interfaces
 {
     public interface IMainService
     {
-        List<ApplicationViewModel> GetList();
-        void CreateApplication(ApplicationBindingModel model);
-        void SendApplication(ApplicationBindingModel model);
-        void FinishApplication(ApplicationBindingModel model);
-        //void PutResourseOnSklad(SkladResourseBindingModel model);
+        
+        
     }
 }

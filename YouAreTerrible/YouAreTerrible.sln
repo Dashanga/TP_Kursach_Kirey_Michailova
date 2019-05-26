@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyViewWeb", "BeautyView
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyServiceDAL_P", "BeautyServiceDAL_P\BeautyServiceDAL_P.csproj", "{172C154B-4796-44F3-94E5-E9B84C86FA0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeutyView", "BeutyView\BeutyView.csproj", "{C552324A-EBC2-464A-9BA3-C49F7A8B6AF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyServiceImplementListP", "BeautyServiceImplementListP\BeautyServiceImplementListP.csproj", "{EC3B00DD-5C34-4DA9-91B0-E2AFB09687F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{172C154B-4796-44F3-94E5-E9B84C86FA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{172C154B-4796-44F3-94E5-E9B84C86FA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{172C154B-4796-44F3-94E5-E9B84C86FA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C552324A-EBC2-464A-9BA3-C49F7A8B6AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C552324A-EBC2-464A-9BA3-C49F7A8B6AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C552324A-EBC2-464A-9BA3-C49F7A8B6AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C552324A-EBC2-464A-9BA3-C49F7A8B6AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC3B00DD-5C34-4DA9-91B0-E2AFB09687F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC3B00DD-5C34-4DA9-91B0-E2AFB09687F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC3B00DD-5C34-4DA9-91B0-E2AFB09687F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC3B00DD-5C34-4DA9-91B0-E2AFB09687F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
