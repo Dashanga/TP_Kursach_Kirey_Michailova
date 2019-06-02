@@ -9,7 +9,7 @@ namespace BeautyServiceDAL_P.ViewModel
 {
     public class ResourseViewModel
     {
-        public int ResourseId { get; set; }
+        public int Id { get; set; }
         [DisplayName("Название ресурса")]
         public string ResourseName { get; set; }
         [DisplayName("Цена")]

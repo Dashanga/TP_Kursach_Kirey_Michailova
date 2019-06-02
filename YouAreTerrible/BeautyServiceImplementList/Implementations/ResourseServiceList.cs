@@ -73,7 +73,8 @@ namespace BeautyServiceImplementList.Implementations
             }
             element.ResourseName = model.ResourseName;
             element.ResoursePrice = model.ResoursePrice;
-        }
+        }
+
         public void DelElement(int id)
         {
             Resourse element = source.Resourses.FirstOrDefault(rec => rec.ResourseId == id);

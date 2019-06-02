@@ -16,5 +16,15 @@ namespace BeutyView
         {
             InitializeComponent();
         }
+
+        private void ресурсыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void магазиныToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

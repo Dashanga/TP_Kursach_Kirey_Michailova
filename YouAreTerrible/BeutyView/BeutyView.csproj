@@ -60,8 +60,29 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormResourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormResourse.Designer.cs">
+      <DependentUpon>FormResourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormResourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormResourses.Designer.cs">
+      <DependentUpon>FormResourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormResourse.resx">
+      <DependentUpon>FormResourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormResourses.resx">
+      <DependentUpon>FormResourses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -94,9 +115,9 @@
       <Project>{172c154b-4796-44f3-94e5-e9b84c86fa0d}</Project>
       <Name>BeautyServiceDAL_P</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BeautyServiceImplementList\BeautyServiceImplementList.csproj">
-      <Project>{c339d6cb-cda7-4d95-a59f-05b30f4ebca5}</Project>
-      <Name>BeautyServiceImplementList</Name>
+    <ProjectReference Include="..\BeautyServiceImplementListP\BeautyServiceImplementListP.csproj">
+      <Project>{ec3b00dd-5c34-4da9-91b0-e2afb09687f0}</Project>
+      <Name>BeautyServiceImplementListP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

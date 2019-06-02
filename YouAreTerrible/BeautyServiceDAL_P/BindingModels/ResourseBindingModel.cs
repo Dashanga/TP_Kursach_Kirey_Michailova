@@ -8,7 +8,7 @@ namespace BeautyServiceDAL_P.BindingModels
 {
     public class ResourseBindingModel
     {
-        public int ResourseId { get; set; }
+        public int Id { get; set; }
         public string ResourseName { get; set; }
         public decimal ResoursePrice { get; set; }
     }

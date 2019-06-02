@@ -1,5 +1,5 @@
 ﻿using BeautyServiceDAL_P.Interfaces;
-using BeautyServiceImplementList.Implementations;
+using BeautyServiceImplementListP.Implementations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -26,10 +26,9 @@ namespace BeutyView
         public static IUnityContainer BuildUnityContainer()
         {
             var currentContainer = new UnityContainer();
-            currentContainer.RegisterType<IResourceService, ResourseServiceList>(new
-           HierarchicalLifetimeManager());
-            currentContainer.RegisterType<ISkladService, SkladServiceList>(new
-HierarchicalLifetimeManager());
+
+            currentContainer.RegisterType<IResourceService, ResourseServiceList>(new HierarchicalLifetimeManager());
+            //currentContainer.RegisterType<ISkladService, SkladServiceList>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }
