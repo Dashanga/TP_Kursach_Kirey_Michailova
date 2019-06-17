@@ -12,7 +12,7 @@ namespace BeautyModel
         public int SkladId { get; set; }
         public int ResourseId { get; set; }
         public int Count { get; set; }
-        //public virtual Resourse Resourse { get; set; }
-        //public virtual Sklad Sklad { get; set; }
+        public virtual Resourse Resourse { get; set; }
+        public virtual Sklad Sklad { get; set; }
     }
 }

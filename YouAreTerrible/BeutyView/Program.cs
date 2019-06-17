@@ -2,7 +2,6 @@
 using BeautyServiceImplementListP.Implementations;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,16 +18,18 @@ namespace BeutyView
         [STAThread]
         static void Main()
         {
+            var container = BuildUnityContainer();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            Application.Run(container.Resolve<FormMain>());
         }
         public static IUnityContainer BuildUnityContainer()
         {
             var currentContainer = new UnityContainer();
 
-            currentContainer.RegisterType<IResourceService, ResourseServiceList>(new HierarchicalLifetimeManager());
-            //currentContainer.RegisterType<ISkladService, SkladServiceList>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IResourseService, ResourseServiceList>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<ISkladService, SkladServiceList>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IMainService, MainServiceList>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }

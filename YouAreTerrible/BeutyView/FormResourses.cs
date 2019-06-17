@@ -17,7 +17,8 @@ namespace BeutyView
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
-        private readonly IResourseService service;
+        private readonly IResourseService service;
+
         public FormResourses(IResourseService service)
         {
             InitializeComponent();
@@ -79,7 +80,8 @@ MessageBoxIcon.Error);
                     }
                     LoadData();
                 }
-            }
+            }
+
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

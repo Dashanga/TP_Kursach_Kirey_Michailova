@@ -20,7 +20,8 @@ namespace BeutyView
         public new IUnityContainer Container { get; set; }
         public int Id { set { id = value; } }
         private readonly IResourseService service;
-        private int? id;
+        private int? id;
+
 
         public FormResourse(IResourseService service)
         {
@@ -45,7 +46,8 @@ namespace BeutyView
                    MessageBoxIcon.Error);
                 }
             }
-        }
+        }
+
         private void buttonSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxName.Text))
@@ -88,7 +90,8 @@ namespace BeutyView
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
                MessageBoxIcon.Error);
-            }
+            }
+
         }
 
         private void buttonDel_Click(object sender, EventArgs e)
