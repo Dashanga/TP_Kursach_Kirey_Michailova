@@ -34,6 +34,11 @@ namespace BeutyView
             var form = Container.Resolve<FormSklads>();
             form.ShowDialog();
         }
-        
+
+        private void пополнитьМагазинToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormPutOnSklad>();
+            form.ShowDialog();
+        }
     }
 }

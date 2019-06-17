@@ -32,13 +32,15 @@
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ресурсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.магазиныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пополнитьМагазинToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справочникиToolStripMenuItem});
+            this.справочникиToolStripMenuItem,
+            this.пополнитьМагазинToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(634, 24);
@@ -53,21 +55,27 @@
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.справочникиToolStripMenuItem.Text = "Справочники";
-           
             // 
             // ресурсыToolStripMenuItem
             // 
             this.ресурсыToolStripMenuItem.Name = "ресурсыToolStripMenuItem";
-            this.ресурсыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ресурсыToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.ресурсыToolStripMenuItem.Text = "Ресурсы";
             this.ресурсыToolStripMenuItem.Click += new System.EventHandler(this.ресурсыToolStripMenuItem_Click);
             // 
             // магазиныToolStripMenuItem
             // 
             this.магазиныToolStripMenuItem.Name = "магазиныToolStripMenuItem";
-            this.магазиныToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.магазиныToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.магазиныToolStripMenuItem.Text = "Магазины";
             this.магазиныToolStripMenuItem.Click += new System.EventHandler(this.магазиныToolStripMenuItem_Click);
+            // 
+            // пополнитьМагазинToolStripMenuItem
+            // 
+            this.пополнитьМагазинToolStripMenuItem.Name = "пополнитьМагазинToolStripMenuItem";
+            this.пополнитьМагазинToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
+            this.пополнитьМагазинToolStripMenuItem.Text = "Пополнить магазин";
+            this.пополнитьМагазинToolStripMenuItem.Click += new System.EventHandler(this.пополнитьМагазинToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -91,5 +99,6 @@
         private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ресурсыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem магазиныToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem пополнитьМагазинToolStripMenuItem;
     }
 }

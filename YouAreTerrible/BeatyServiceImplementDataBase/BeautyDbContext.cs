@@ -23,6 +23,6 @@ namespace BeautyServiceImplementDataBase
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServiceResourse> ServiceResourses { get; set; }
         public virtual DbSet<Sklad> Sklads { get; set; }
-        public virtual DbSet<SkladResourse> WSkladResourses { get; set; }
+        public virtual DbSet<SkladResourse> SkladResourses { get; set; }
     }
 }

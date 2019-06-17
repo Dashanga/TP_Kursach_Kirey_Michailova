@@ -79,6 +79,12 @@ namespace BeutyView
                     if (view != null)
                     {
                         textBoxName.Text = view.SkladName;
+                        dataGridView1.DataSource = view.SkladResourses;
+                        dataGridView1.Columns[0].Visible = false;
+                        dataGridView1.Columns[1].Visible = false;
+                        dataGridView1.Columns[2].Visible = false;
+                        dataGridView1.Columns[3].AutoSizeMode =
+                        DataGridViewAutoSizeColumnMode.Fill;
                     }
                 }
                 catch (Exception ex)

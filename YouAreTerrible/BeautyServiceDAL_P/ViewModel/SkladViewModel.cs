@@ -10,7 +10,7 @@ namespace BeautyServiceDAL_P.ViewModel
     public class SkladViewModel
     {
         public int SkladId { get; set; }
-        [DisplayName("Название склада")]
+        [DisplayName("Название магазина")]
         public string SkladName { get; set; }
         public List<SkladResourseViewModel> SkladResourses { get; set; }
     }

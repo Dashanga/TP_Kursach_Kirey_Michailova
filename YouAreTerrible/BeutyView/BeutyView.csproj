@@ -67,6 +67,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPutOnSklad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPutOnSklad.Designer.cs">
+      <DependentUpon>FormPutOnSklad.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormResourse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPutOnSklad.resx">
+      <DependentUpon>FormPutOnSklad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormResourse.resx">
       <DependentUpon>FormResourse.cs</DependentUpon>

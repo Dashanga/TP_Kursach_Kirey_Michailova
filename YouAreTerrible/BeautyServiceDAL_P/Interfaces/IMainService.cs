@@ -10,7 +10,8 @@ namespace BeautyServiceDAL_P.Interfaces
 {
     public interface IMainService
     {
-        
-        
+        void PutResourseOnSklad(SkladResourseBindingModel model);
+
+
     }
 }
