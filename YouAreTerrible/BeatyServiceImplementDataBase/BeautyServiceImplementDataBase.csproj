@@ -7,8 +7,8 @@
     <ProjectGuid>{B0E6FD66-A9F3-4EBD-B792-DE0DEEA181A9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BeatyServiceImplementDataBase</RootNamespace>
-    <AssemblyName>BeatyServiceImplementDataBase</AssemblyName>
+    <RootNamespace>BeautyServiceImplementDataBase</RootNamespace>
+    <AssemblyName>BeautyServiceImplementDataBase</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -48,7 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BeautyDbContext.cs" />
+    <Compile Include="Implementations\MainServiceDB.cs" />
+    <Compile Include="Implementations\SkladServiceDB.cs" />
+    <Compile Include="Migrations\201906171547136_FirstMigration.cs" />
+    <Compile Include="Migrations\201906171547136_FirstMigration.Designer.cs">
+      <DependentUpon>201906171547136_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Implementations\ResourseServiceDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BeautyModel\BeautyModel.csproj">
@@ -63,6 +71,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906171547136_FirstMigration.resx">
+      <DependentUpon>201906171547136_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

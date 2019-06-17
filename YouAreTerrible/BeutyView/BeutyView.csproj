@@ -132,6 +132,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BeatyServiceImplementDataBase\BeautyServiceImplementDataBase.csproj">
+      <Project>{b0e6fd66-a9f3-4ebd-b792-de0deea181a9}</Project>
+      <Name>BeautyServiceImplementDataBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BeautyModel\BeautyModel.csproj">
       <Project>{933384ef-c07c-4299-adf3-31a052e53f56}</Project>
       <Name>BeautyModel</Name>

@@ -1,7 +1,10 @@
 ﻿using BeautyServiceDAL_P.Interfaces;
+using BeautyServiceImplementDataBase;
+using BeautyServiceImplementDataBase.Implementations;
 using BeautyServiceImplementListP.Implementations;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,10 +29,10 @@ namespace BeutyView
         public static IUnityContainer BuildUnityContainer()
         {
             var currentContainer = new UnityContainer();
-
-            currentContainer.RegisterType<IResourseService, ResourseServiceList>(new HierarchicalLifetimeManager());
-            currentContainer.RegisterType<ISkladService, SkladServiceList>(new HierarchicalLifetimeManager());
-            currentContainer.RegisterType<IMainService, MainServiceList>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<DbContext, BeautyDbContext>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IResourseService, ResourseServiceDB>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<ISkladService, SkladServiceDB>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IMainService, MainServiceDB>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }

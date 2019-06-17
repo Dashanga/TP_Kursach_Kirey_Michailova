@@ -17,7 +17,8 @@ namespace BeautyServiceImplementDataBase
             Configuration.LazyLoadingEnabled = false;
             var ensureDLLIsCopied =
            System.Data.Entity.SqlServer.SqlProviderServices.Instance;
-        }        public virtual DbSet<Provider> Providers { get; set; }
+        }
+        public virtual DbSet<Provider> Providers { get; set; }
         public virtual DbSet<Resourse> Resourses { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServiceResourse> ServiceResourses { get; set; }
