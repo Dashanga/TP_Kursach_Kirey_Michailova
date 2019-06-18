@@ -96,6 +96,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormResourses";
             this.Text = "Ресурсы";
+            this.Load += new System.EventHandler(this.FormResourses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

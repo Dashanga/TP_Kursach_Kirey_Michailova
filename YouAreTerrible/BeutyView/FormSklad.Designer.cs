@@ -104,6 +104,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormSklad";
             this.Text = "Магазин";
+            this.Load += new System.EventHandler(this.FormSklad_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

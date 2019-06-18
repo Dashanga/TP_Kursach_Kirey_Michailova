@@ -26,7 +26,8 @@ IMainService serviceM)
             InitializeComponent();
             this.serviceS = serviceS;
             this.serviceR = serviceR;
-            this.serviceM = serviceM;
+            this.serviceM = serviceM;
+
         }
         private void FormPutOnSklad_Load(object sender, EventArgs e)
         {
@@ -44,7 +45,7 @@ IMainService serviceM)
                 if (listS != null)
                 {
                     comboBoxSklad.DisplayMember = "SkladName";
-                    comboBoxSklad.ValueMember = "Id";
+                    comboBoxSklad.ValueMember = "SkladId";
                     comboBoxSklad.DataSource = listS;
                     comboBoxSklad.SelectedItem = null;
                 }
@@ -92,7 +93,8 @@ IMainService serviceM)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
                MessageBoxIcon.Error);
-            }
+            }
+
         }
 
         private void buttonDel_Click(object sender, EventArgs e)
