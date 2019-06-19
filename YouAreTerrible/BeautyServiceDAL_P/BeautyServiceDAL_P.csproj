@@ -43,23 +43,27 @@
   <ItemGroup>
     <Compile Include="BindingModels\ApplicationBindingModel.cs" />
     <Compile Include="BindingModels\ProviderBindingModel.cs" />
+    <Compile Include="BindingModels\ReportBindingModel.cs" />
     <Compile Include="BindingModels\ResourseBindingModel.cs" />
     <Compile Include="BindingModels\ServiceBindingModel.cs" />
     <Compile Include="BindingModels\ServiceResourseBindingModel.cs" />
     <Compile Include="BindingModels\SkladBindingModel.cs" />
     <Compile Include="BindingModels\SkladResourseBindingModel.cs" />
     <Compile Include="Interfaces\IMainService.cs" />
+    <Compile Include="Interfaces\IReportService.cs" />
     <Compile Include="Interfaces\IResourseService.cs" />
     <Compile Include="Interfaces\IServiceService.cs" />
     <Compile Include="Interfaces\ISkladService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
+    <Compile Include="ViewModel\MovementResourseViewModel.cs" />
     <Compile Include="ViewModel\ProviderViewModel.cs" />
     <Compile Include="ViewModel\ResourseViewModel.cs" />
     <Compile Include="ViewModel\ServiceResourseViewModel.cs" />
     <Compile Include="ViewModel\ServiceViewModel.cs" />
     <Compile Include="ViewModel\SkladResourseViewModel.cs" />
     <Compile Include="ViewModel\SkladViewModel.cs" />
+    <Compile Include="ViewModel\TransferResourseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BeautyModel\BeautyModel.csproj">
