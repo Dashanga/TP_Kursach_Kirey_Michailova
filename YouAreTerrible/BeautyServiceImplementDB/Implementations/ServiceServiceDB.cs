@@ -5,6 +5,8 @@ using BeautyServiceDAL.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
+using System.Data.Entity.SqlServer;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -69,67 +71,46 @@ namespace BeautyServiceImplementDB.Implementations
             {
                 try
                 {
-                    Service element = context.Services.FirstOrDefault(rec =>
-                    rec.ServiceName == model.ServiceName);
-                    if (element != null)
-                    {
-                        throw new Exception("Уже есть услуга с таким названием");
-                    }
-
-                    var outputElements = context.ServiceResourses.Include("Resource").Where(rec => rec.ServiceId == element.ServiceId);
-                    foreach (var outputElement in outputElements)
-                    {
-                        int countOnStocks = outputElement.Count;
-                        var skladElements = context.SkladResourses.Where(rec =>
-                        rec.ResourseId == outputElement.ResourseId);
-                        foreach (var skladElement in skladElements)
-                        {
-                            // компонентов на одном слкаде может не хватать
-                            if (skladElement.Count >= countOnStocks)
-                            {
-                                skladElement.Count -= countOnStocks;
-                                countOnStocks = 0;
-                                context.SaveChanges();
-                                break;
-                            }
-                            else
-                            {
-                                countOnStocks -= skladElement.Count;
-                                skladElement.Count = 0;
-                                context.SaveChanges();
-                            }
-                        }
-                        if (countOnStocks > 0)
-                        {
-                            throw new Exception("Не достаточно ресурсов " +
-                            outputElement.Resourse.ResourseName + " требуется " + outputElement.Count + ", не хватает " + countOnStocks);
-                        }
-                    }
-                    element = new Service
-                    {
-                        ServiceName = model.ServiceName
-                    };
-                    context.Services.Add(element);
-                    context.SaveChanges();
-                    //// убираем дубли по компонентам
-                    //var groupElements = model.OutputElements
-                    //.GroupBy(rec => rec.ElementId)
-                    //.Select(rec => new
+                    //Service element = context.Services.FirstOrDefault(rec =>
+                    //rec.ServiceName == model.ServiceName);
+                    //if (element != null)
                     //{
-                    //    ElementId = rec.Key,
-                    //    Number = rec.Sum(r => r.Number)
-                    //});
-                    //// добавляем компоненты
-                    //foreach (var groupElement in groupElements)
-                    //{
-                    //    context.OutputElements.Add(new OutputElement
-                    //    {
-                    //        OutputId = element.Id,
-                    //        ElementId = groupElement.ElementId,
-                    //        Number = groupElement.Number
-                    //    });
-                    //    context.SaveChanges();
+                    //    throw new Exception("Уже есть услуга с таким названием");
                     //}
+                    
+                    //foreach (var resourse in model.ServiceResourses)
+                    //{
+                    //    int countOnStocks = resourse.Count;
+                    //    //var skladElements = от Марины
+                    //    foreach (var skladElement in skladElements)
+                    //    {
+                    //        // компонентов на одном слкаде может не хватать
+                    //        if (skladElement.Count >= countOnStocks)
+                    //        {
+                    //            skladElement.Count -= countOnStocks;
+                    //            countOnStocks = 0;
+                    //            context.SaveChanges();
+                    //            break;
+                    //        }
+                    //        else
+                    //        {
+                    //            countOnStocks -= skladElement.Count;
+                    //            skladElement.Count = 0;
+                    //            context.SaveChanges();
+                    //        }
+                    //    }
+                    //    if (countOnStocks > 0)
+                    //    {
+                    //        throw new Exception("Не достаточно ресурсов " +
+                    //        outputElement.Resourse.ResourseName + " требуется " + outputElement.Count + ", не хватает " + countOnStocks);
+                    //    }
+                    //}
+                    //element = new Service
+                    //{
+                    //    ServiceName = model.ServiceName
+                    //};
+                    //context.Services.Add(element);
+                    //context.SaveChanges();
                     transaction.Commit();
                 }
                 catch (Exception)

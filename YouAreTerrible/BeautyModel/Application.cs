@@ -16,5 +16,6 @@ namespace BeautyModel
         public DateTime DateCreate { get; set; }
         public DateTime? DateImplement { get; set; }
         public virtual Resourse Resourse { get; set; }
+        public virtual Provider Provider { get; set; }
     }
 }

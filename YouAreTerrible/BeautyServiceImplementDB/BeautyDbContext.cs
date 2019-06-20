@@ -5,7 +5,7 @@ namespace BeautyServiceImplementDB
 {
     public class BeautyDbContext : DbContext
     {
-        public BeautyDbContext() : base("AbstractDatabase")
+        public BeautyDbContext() : base("BeautyDatabase")
         {
             //настройки конфигурации для entity
             Configuration.ProxyCreationEnabled = false;
@@ -19,5 +19,7 @@ namespace BeautyServiceImplementDB
         public virtual DbSet<ServiceResourse> ServiceResourses { get; set; }
         public virtual DbSet<Sklad> Sklads { get; set; }
         public virtual DbSet<SkladResourse> SkladResourses { get; set; }
+        public virtual DbSet<MessageInfo> MessageInfos { get; set; }
+        public virtual DbSet<Provider> Providers { get; set; }
     }
 }

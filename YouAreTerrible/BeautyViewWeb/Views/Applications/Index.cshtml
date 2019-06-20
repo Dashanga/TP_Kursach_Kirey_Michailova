@@ -42,8 +42,9 @@
             @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
-            @Html.ActionLink("Отправить", "SetStatus", new { id=item.ApplicationId, status = "Отправлена" }) 
-        </td>
+            @Html.ActionLink("Отправить", "SetStatus", new { id=item.ApplicationId, status = "Отправлена" }) |
+			@Html.ActionLink("Закрыть", "SetStatus", new { id = item.ApplicationId, status = "Закрыта" })
+		</td>
     </tr>
 }
 

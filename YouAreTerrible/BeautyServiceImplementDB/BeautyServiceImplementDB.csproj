@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,8 +52,18 @@
   <ItemGroup>
     <Compile Include="BeautyDbContext.cs" />
     <Compile Include="Implementations\MainServiceDB.cs" />
+    <Compile Include="Implementations\MessageInfoServiceDB.cs" />
     <Compile Include="Implementations\ResourseServiceDB.cs" />
     <Compile Include="Implementations\ServiceServiceDB.cs" />
+    <Compile Include="Migrations\201906201236104_FirstMigration.cs" />
+    <Compile Include="Migrations\201906201236104_FirstMigration.Designer.cs">
+      <DependentUpon>201906201236104_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906201839535_Messages.cs" />
+    <Compile Include="Migrations\201906201839535_Messages.Designer.cs">
+      <DependentUpon>201906201839535_Messages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +80,14 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906201236104_FirstMigration.resx">
+      <DependentUpon>201906201236104_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201839535_Messages.resx">
+      <DependentUpon>201906201839535_Messages.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

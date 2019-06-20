@@ -29,7 +29,7 @@ namespace BeautyViewWeb.Controllers
         [HttpPost]
         public ActionResult CreatePost()
         {
-            var resourseId = int.Parse(Request["ResourseName"]);
+            var resourseId = int.Parse(Request["ResourseId"]);
             var resourseCount = int.Parse(Request["Count"]);
             var totalCost = CalcSum(resourseId, resourseCount);
 
@@ -67,8 +67,6 @@ namespace BeautyViewWeb.Controllers
             {
                 ModelState.AddModelError("Error", ex.Message);
             }
-            
-
             return RedirectToAction("Index");
         }
     }
