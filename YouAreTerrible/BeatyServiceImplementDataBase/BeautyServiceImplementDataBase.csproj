@@ -61,14 +61,24 @@
   <ItemGroup>
     <Compile Include="BeautyDbContext.cs" />
     <Compile Include="Implementations\MainServiceDB.cs" />
+    <Compile Include="Implementations\ReportServiceDB.cs" />
     <Compile Include="Implementations\SkladServiceDB.cs" />
-    <Compile Include="Migrations\201906171547136_FirstMigration.cs" />
-    <Compile Include="Migrations\201906171547136_FirstMigration.Designer.cs">
-      <DependentUpon>201906171547136_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201906200745292_FirstMigration.cs" />
+    <Compile Include="Migrations\201906200745292_FirstMigration.Designer.cs">
+      <DependentUpon>201906200745292_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906200829527_SecondMigration.cs" />
+    <Compile Include="Migrations\201906200829527_SecondMigration.Designer.cs">
+      <DependentUpon>201906200829527_SecondMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementations\ResourseServiceDB.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BeautyModel\BeautyModel.csproj">
@@ -83,10 +93,18 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Resources\TIMCYR.TTF" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906171547136_FirstMigration.resx">
-      <DependentUpon>201906171547136_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906200745292_FirstMigration.resx">
+      <DependentUpon>201906200745292_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906200829527_SecondMigration.resx">
+      <DependentUpon>201906200829527_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

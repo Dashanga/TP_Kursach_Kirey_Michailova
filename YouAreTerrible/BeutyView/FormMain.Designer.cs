@@ -33,6 +33,8 @@
             this.ресурсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.магазиныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пополнитьМагазинToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.движениеРесурсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +42,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.справочникиToolStripMenuItem,
-            this.пополнитьМагазинToolStripMenuItem});
+            this.пополнитьМагазинToolStripMenuItem,
+            this.отчетыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(634, 24);
@@ -77,6 +80,21 @@
             this.пополнитьМагазинToolStripMenuItem.Text = "Пополнить магазин";
             this.пополнитьМагазинToolStripMenuItem.Click += new System.EventHandler(this.пополнитьМагазинToolStripMenuItem_Click);
             // 
+            // отчетыToolStripMenuItem
+            // 
+            this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.движениеРесурсовToolStripMenuItem});
+            this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
+            this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.отчетыToolStripMenuItem.Text = "Отчеты";
+            this.отчетыToolStripMenuItem.Click += new System.EventHandler(this.отчетыToolStripMenuItem_Click);
+            // 
+            // движениеРесурсовToolStripMenuItem
+            // 
+            this.движениеРесурсовToolStripMenuItem.Name = "движениеРесурсовToolStripMenuItem";
+            this.движениеРесурсовToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.движениеРесурсовToolStripMenuItem.Text = "Движение ресурсов";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,5 +118,7 @@
         private System.Windows.Forms.ToolStripMenuItem ресурсыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem магазиныToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пополнитьМагазинToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem движениеРесурсовToolStripMenuItem;
     }
 }

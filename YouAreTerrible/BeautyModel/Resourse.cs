@@ -11,7 +11,7 @@ namespace BeautyModel
         public int ResourseId { get; set; }
         public string ResourseName { get; set; }
         public decimal ResoursePrice { get; set; }
-        //public virtual List<ServiceResourse> ServiceResourses { get; set; }
-        //public virtual List<SkladResourse> SkladResourses { get; set; }
+        public virtual List<ServiceResourse> ServiceResourses { get; set; }
+        public virtual List<SkladResourse> SkladResourses { get; set; }
     }
 }

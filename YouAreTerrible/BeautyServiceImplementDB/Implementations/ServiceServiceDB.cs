@@ -76,7 +76,7 @@ namespace BeautyServiceImplementDB.Implementations
                         throw new Exception("Уже есть услуга с таким названием");
                     }
 
-                    var outputElements = context.ServiceResourses.Include(rec => rec.Resourse).Where(rec => rec.ServiceId == element.ServiceId);
+                    var outputElements = context.ServiceResourses.Include("Resource").Where(rec => rec.ServiceId == element.ServiceId);
                     foreach (var outputElement in outputElements)
                     {
                         int countOnStocks = outputElement.Count;

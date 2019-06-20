@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BeautyServiceDAL_P.Interfaces
 {
-    interface IReportService
+    public interface IReportService
     {
-        List<MovementResourseViewModel> GetMovementResourses(ReportBindingModel model);
+        List<ApplicationResourseViewModel> GetMovementResourses(ReportBindingModel model);
         void SaveMovementResourses(ReportBindingModel model);
     }
 }

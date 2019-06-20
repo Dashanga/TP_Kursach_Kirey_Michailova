@@ -33,6 +33,7 @@ namespace BeutyView
             currentContainer.RegisterType<IResourseService, ResourseServiceDB>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<ISkladService, SkladServiceDB>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IMainService, MainServiceDB>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IReportService, ReportServiceDB>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }
