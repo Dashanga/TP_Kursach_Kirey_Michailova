@@ -12,6 +12,6 @@ namespace BeautyModel
         public int ServiceId { get; set; }
         public int ResourseId { get; set; }
         public int Count { get; set; }
-        //public virtual Resourse Resourse { get; set; }
+        public virtual Resourse Resourse { get; set; }
     }
 }

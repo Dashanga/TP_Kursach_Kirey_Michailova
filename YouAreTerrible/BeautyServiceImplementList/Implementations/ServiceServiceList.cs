@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BeautyServiceImplementList.Implementations
+namespace BeautyServiceImplementDB.Implementations
 {
     public class ServiceServiceList : IServiceService
     {

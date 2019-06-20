@@ -14,5 +14,6 @@ namespace BeautyServiceDAL.Interfaces
         void CreateApplication(ApplicationBindingModel model);
         void SendApplication(ApplicationBindingModel model);
         void FinishApplication(ApplicationBindingModel model);
+        bool ApplicationFinished(ApplicationBindingModel model);
     }
 }

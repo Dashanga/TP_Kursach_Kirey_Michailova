@@ -14,7 +14,7 @@ namespace BeautyServiceDAL.Interfaces
         ServiceViewModel GetElement(int id);
         void AddElement(ServiceBindingModel model);
        // void UpdElement(ServiceBindingModel model);
-        void DelElement(int id);
+        //void DelElement(int id);
 
     }
 }

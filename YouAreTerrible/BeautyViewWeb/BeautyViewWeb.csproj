@@ -142,7 +142,6 @@
     <Compile Include="Controllers\ApplicationsController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
-    <Compile Include="Controllers\SkladsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,9 +217,9 @@
       <Project>{5f0b46b5-0bca-4546-aac0-70aff4e5e035}</Project>
       <Name>BeautyServiceDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BeautyServiceImplementList\BeautyServiceImplementList.csproj">
-      <Project>{c339d6cb-cda7-4d95-a59f-05b30f4ebca5}</Project>
-      <Name>BeautyServiceImplementList</Name>
+    <ProjectReference Include="..\BeautyServiceImplementDB\BeautyServiceImplementDB.csproj">
+      <Project>{b37fc7fd-8a7c-42f1-a860-e5d0a426ae42}</Project>
+      <Name>BeautyServiceImplementDB</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

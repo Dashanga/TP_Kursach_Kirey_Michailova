@@ -1,12 +1,7 @@
 ﻿using BeautyModel;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BeautyServiceImplementDataBase
+namespace BeautyServiceImplementDB
 {
     public class BeautyDbContext : DbContext
     {
@@ -16,15 +11,15 @@ namespace BeautyServiceImplementDataBase
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
             var ensureDLLIsCopied =
-           System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+            System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
-        public virtual DbSet<Provider> Providers { get; set; }
         public virtual DbSet<Resourse> Resourses { get; set; }
+        public virtual DbSet<Application> Applications { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServiceResourse> ServiceResourses { get; set; }
         public virtual DbSet<Sklad> Sklads { get; set; }
         public virtual DbSet<SkladResourse> SkladResourses { get; set; }
-        public virtual DbSet<Application> Applications { get; set; }
-        public virtual DbSet<ApplicationResourse> ApplicationResourses { get; set; }
+        public virtual DbSet<MessageInfo> MessageInfos { get; set; }
+        public virtual DbSet<Provider> Providers { get; set; }
     }
 }

@@ -10,6 +10,7 @@ namespace BeautyServiceDAL.BindingModels
     {
         public int ApplicationId { get; set; }
         public int ResourseId { get; set; }
+        public int ResourseName { get; set; }
         public int Count { get; set; }
         public decimal Summa { get; set; }
     }

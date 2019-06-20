@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyModel", "BeautyModel\BeautyModel.csproj", "{933384EF-C07C-4299-ADF3-31A052E53F56}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyServiceDAL", "BeautyServiceDAL\BeautyServiceDAL.csproj", "{5F0B46B5-0BCA-4546-AAC0-70AFF4E5E035}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyServiceImplementList", "BeautyServiceImplementList\BeautyServiceImplementList.csproj", "{C339D6CB-CDA7-4D95-A59F-05B30F4EBCA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyViewWeb", "BeautyViewWeb\BeautyViewWeb.csproj", "{EEFA7384-E9E0-42CA-B648-397ED94A4504}"
 EndProject
@@ -18,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyServiceImplementListP", "BeautyServiceImplementListP\BeautyServiceImplementListP.csproj", "{EC3B00DD-5C34-4DA9-91B0-E2AFB09687F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyServiceImplementDataBase", "BeatyServiceImplementDataBase\BeautyServiceImplementDataBase.csproj", "{B0E6FD66-A9F3-4EBD-B792-DE0DEEA181A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyServiceImplementDB", "BeautyServiceImplementDB\BeautyServiceImplementDB.csproj", "{B37FC7FD-8A7C-42F1-A860-E5D0A426AE42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{5F0B46B5-0BCA-4546-AAC0-70AFF4E5E035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F0B46B5-0BCA-4546-AAC0-70AFF4E5E035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F0B46B5-0BCA-4546-AAC0-70AFF4E5E035}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C339D6CB-CDA7-4D95-A59F-05B30F4EBCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C339D6CB-CDA7-4D95-A59F-05B30F4EBCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C339D6CB-CDA7-4D95-A59F-05B30F4EBCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C339D6CB-CDA7-4D95-A59F-05B30F4EBCA5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EEFA7384-E9E0-42CA-B648-397ED94A4504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EEFA7384-E9E0-42CA-B648-397ED94A4504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEFA7384-E9E0-42CA-B648-397ED94A4504}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +53,10 @@ Global
 		{B0E6FD66-A9F3-4EBD-B792-DE0DEEA181A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0E6FD66-A9F3-4EBD-B792-DE0DEEA181A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0E6FD66-A9F3-4EBD-B792-DE0DEEA181A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B37FC7FD-8A7C-42F1-A860-E5D0A426AE42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37FC7FD-8A7C-42F1-A860-E5D0A426AE42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37FC7FD-8A7C-42F1-A860-E5D0A426AE42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37FC7FD-8A7C-42F1-A860-E5D0A426AE42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
