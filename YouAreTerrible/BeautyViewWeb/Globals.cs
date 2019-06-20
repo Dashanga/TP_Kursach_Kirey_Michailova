@@ -1,5 +1,6 @@
 ﻿using BeautyServiceDAL.Interfaces;
-using BeautyServiceImplementList.Implementations;
+using BeautyServiceImplementDB;
+using BeautyServiceImplementDB.Implementations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,10 @@ namespace BeautyViewWeb
 {
     public static class Globals
     {
-        public static IResourseService ResourseService { get; } = new ResourseServiceList();
-        public static IServiceService ServiceService { get; } = new ServiceServiceList();
-        public static IMainService MainService { get; } = new MainServiceList();
-        public static ISkladService SkladService { get; } = new SkladServiceList();
+        public static BeautyDbContext DbContext { get; } = new BeautyDbContext();
+        public static IResourseService ResourseService { get; } = new ResourseServiceDB(DbContext);
+        public static IServiceService ServiceService { get; } = new ServiceServiceDB(DbContext);
+        public static IMainService MainService { get; } = new MainServiceDB(DbContext);
+        public static ISkladService SkladService { get; } = new SkladServiceDB(DbContext);
     }
 }

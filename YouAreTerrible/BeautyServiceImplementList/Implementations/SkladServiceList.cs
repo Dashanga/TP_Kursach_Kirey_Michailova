@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BeautyServiceImplementList.Implementations
+namespace BeautyServiceImplementDB.Implementations
 {
     public class SkladServiceList : ISkladService
     {

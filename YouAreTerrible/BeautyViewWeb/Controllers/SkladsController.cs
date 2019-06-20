@@ -1,81 +1,63 @@
-﻿using BeautyServiceDAL.BindingModels;
+﻿using System.Web.Mvc;
+using BeautyServiceDAL.BindingModels;
 using BeautyServiceDAL.Interfaces;
-using BeautyViewWeb;
-using System.Web.Mvc;
 
-namespace PizzeriaWebView.Controllers
+namespace BeautyViewWeb.Controllers
 {
-    public class SkladsController : Controller
+    public class SkladController : Controller
     {
         private ISkladService service = Globals.SkladService;
-        private IResourseService ingredientService = Globals.ResourseService;
 
-        public ActionResult Index()
+        public ActionResult List()
         {
             return View(service.GetList());
         }
 
-        public ActionResult AddResourse()
-        {
-            var ingredients = new SelectList(ingredientService.GetList(), "ResourseId", "ResourseName");
-            ViewBag.Resourses = ingredients;
-            return View();
-        }
-
-        // GET: Ingredients/Create
         public ActionResult Create()
         {
             return View();
         }
-
 
         [HttpPost]
         public ActionResult CreatePost()
         {
             service.AddElement(new SkladBindingModel
             {
-                SkladName = Request["SkladName"],
-                ResoursePrice = Convert.ToDecimal(Request["ResoursePrice"]),
-
+                SkladName = Request["SkladName"]
             });
-            return RedirectToAction("Index");
+            return RedirectToAction("List");
+        }
+        public ActionResult Details(int id)
+        {
+            return View(service.GetElement(id));
         }
 
-
-        // GET: Ingredients/Edit/5
         public ActionResult Edit(int id)
         {
             var viewModel = service.GetElement(id);
-            var bindingModel = new ResourseBindingModel
+            var bindingModel = new SkladBindingModel
             {
-                ResourseId = id,
-                ResourseName = viewModel.ResourseName,
-                ResoursePrice = viewModel.ResoursePrice
+                SkladId = id,
+                SkladName = viewModel.SkladName
             };
             return View(bindingModel);
         }
 
-
         [HttpPost]
         public ActionResult EditPost()
         {
-            service.UpdElement(new ResourseBindingModel
+            service.UpdElement(new SkladBindingModel
             {
-                ResourseId = int.Parse(Request["ResourseId"]),
-                ResourseName = Request["ResourseName"],
-                ResoursePrice = decimal.Parse(Request["ResoursePrice"])
+                SkladId = int.Parse(Request["SkladId"]),
+                SkladName = Request["SkladName"]
             });
-            return RedirectToAction("Index");
+            return RedirectToAction("List");
         }
 
-
-        // GET: Ingredients/Delete/5
         public ActionResult Delete(int id)
         {
             service.DelElement(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("List");
         }
-
-
     }
 }

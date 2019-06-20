@@ -10,6 +10,6 @@ namespace BeautyModel
     {
         public int SkladId { get; set; }
         public string SkladName { get; set; }
-        //public virtual List<SkladResourse> SkladResourses { get; set; }
+        public virtual List<SkladResourse> SkladResourses { get; set; }
     }
 }

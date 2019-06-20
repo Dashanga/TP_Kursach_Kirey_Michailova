@@ -15,10 +15,10 @@ namespace BeautyViewWeb.Controllers
             return View(service.GetList());
         }
 
-        public ActionResult Delete(int id)
-        {
-            service.DelElement(id);
-            return RedirectToAction("Index");
-        }
+        //public ActionResult Delete(int id)
+        //{
+        //    service.DelElement(id);
+        //    return RedirectToAction("Index");
+        //}
     }
 }
