@@ -16,5 +16,7 @@ namespace BeautyServiceDAL_P.ViewModel
         public string ProviderSurname { get; set; }
         [DisplayName("Отчество поставщика")]
         public string ProviderPatronymic { get; set; }
+        public string Mail { get; set; }
+        public string Password { get; set; }
     }
 }

@@ -12,5 +12,7 @@ namespace BeautyModel
         public string ProviderName { get; set; }
         public string ProviderSurname { get; set; }
         public string ProviderPatronymic { get; set; }
+        public string Mail { get; set; }
+        public string Password { get; set; }
     }
 }
