@@ -8,6 +8,7 @@ namespace BeautyServiceDAL_P.ViewModel
 {
     public class TransferResourseViewModel
     {
+        public string ResourseId { get; set; }
         public string ResourseName { get; set; }
         public int Count { get; set; }
         public decimal Sum { get; set; }

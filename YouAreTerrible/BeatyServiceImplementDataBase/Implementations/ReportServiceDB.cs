@@ -155,5 +155,100 @@ namespace BeautyServiceImplementDataBase.Implementations
             doc.Add(table);
             doc.Close();
         }
+        public void TransferResourses(ReportBindingModel model, int id)
+        {
+            id = id - 1;
+            if (File.Exists(model.FileName))
+            {
+                File.Delete(model.FileName);
+            }
+            var winword = new Microsoft.Office.Interop.Word.Application();
+            try
+            {
+                object missing = System.Reflection.Missing.Value;
+                //создаем документ
+                Microsoft.Office.Interop.Word.Document document =
+                winword.Documents.Add(ref missing, ref missing, ref missing, ref
+               missing);
+                //получаем ссылку на параграф
+                var paragraph = document.Paragraphs.Add(missing);
+                var range = paragraph.Range;
+                //задаем текст
+                range.Text = "Передача ресурсов";
+                //задаем настройки шрифта
+                var font = range.Font;
+                font.Size = 16;
+                font.Name = "Times New Roman";
+                font.Bold = 1;
+                //задаем настройки абзаца
+                var paragraphFormat = range.ParagraphFormat;
+                paragraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
+                paragraphFormat.LineSpacingRule = WdLineSpacing.wdLineSpaceSingle;
+                paragraphFormat.SpaceAfter = 10;
+                paragraphFormat.SpaceBefore = 0;
+                //добавляем абзац в документ
+                range.InsertParagraphAfter();
+                var applications = context.Applications.ToList();
+            //создаем таблицу
+                var paragraphTable = document.Paragraphs.Add(Type.Missing);
+                var rangeTable = paragraphTable.Range;
+                var table = document.Tables.Add(rangeTable, 2, 7, ref
+               missing, ref missing);
+                font = table.Range.Font;
+                font.Size = 11;
+                font.Name = "Times New Roman";
+                var paragraphTableFormat = table.Range.ParagraphFormat;
+                paragraphTableFormat.LineSpacingRule = WdLineSpacing.wdLineSpaceSingle;
+                paragraphTableFormat.SpaceAfter = 0;
+                paragraphTableFormat.SpaceBefore = 0;
+                table.Cell(1, 1).Range.Text = "Название ресурса";
+                table.Cell(1, 2).Range.Text = "Цена";
+                table.Cell(1, 3).Range.Text = "Количество";
+                table.Cell(1, 4).Range.Text = "Сумма";
+                table.Cell(1, 5).Range.Text = "Статус";
+                table.Cell(1, 6).Range.Text = "Дата создания";
+                table.Cell(1, 7).Range.Text = "Дата исполнения";
+                table.Cell(2, 1).Range.Text = applications[id].Resourse.ResourseName;
+                table.Cell(2, 2).Range.Text = applications[id].Resourse.ResoursePrice.ToString();
+                table.Cell(2, 3).Range.Text = applications[id].Count.ToString();
+                table.Cell(2, 4).Range.Text = applications[id].Sum.ToString();
+                table.Cell(2, 5).Range.Text = applications[id].Status.ToString();
+                table.Cell(2, 6).Range.Text = applications[id].DateCreate.ToString();
+                table.Cell(2, 7).Range.Text = applications[id].DateImplement.ToString();
+                //задаем границы таблицы
+                table.Borders.InsideLineStyle = WdLineStyle.wdLineStyleInset;
+                table.Borders.OutsideLineStyle = WdLineStyle.wdLineStyleSingle;
+              
+
+                paragraph = document.Paragraphs.Add(missing);
+                range = paragraph.Range;
+                range.Text = "Дата составления документов: " + DateTime.Now.ToLongDateString();
+                font = range.Font;
+                font.Size = 12;
+                font.Name = "Times New Roman";
+                paragraphFormat = range.ParagraphFormat;
+                paragraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphRight;
+                paragraphFormat.LineSpacingRule = WdLineSpacing.wdLineSpaceSingle;
+                paragraphFormat.SpaceAfter = 10;
+                paragraphFormat.SpaceBefore = 10;
+                range.InsertParagraphAfter();
+                //сохраняем
+                object fileFormat = WdSaveFormat.wdFormatXMLDocument;
+                document.SaveAs(model.FileName, ref fileFormat, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing);
+                document.Close(ref missing, ref missing, ref missing);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                winword.Quit();
+            }
+        }
     }
 }

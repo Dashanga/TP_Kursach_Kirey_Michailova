@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BeautyDbContext.cs" />
+    <Compile Include="Implementations\ApplicationServiceDB.cs" />
     <Compile Include="Implementations\MainServiceDB.cs" />
     <Compile Include="Implementations\ProviderServiceDB.cs" />
     <Compile Include="Implementations\ReportServiceDB.cs" />

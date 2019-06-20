@@ -43,6 +43,17 @@ namespace BeutyView
 
         private void отчетыToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void сформироватьДокументНаПередачуРусрсовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormTransferResourses>();
+            form.ShowDialog();
+        }
+
+        private void движениеРесурсовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             var form = Container.Resolve<FormMovementResourse>();
             form.ShowDialog();
         }

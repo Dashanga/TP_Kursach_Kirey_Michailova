@@ -12,5 +12,6 @@ namespace BeautyServiceDAL_P.Interfaces
     {
         List<ApplicationResourseViewModel> GetMovementResourses(ReportBindingModel model);
         void SaveMovementResourses(ReportBindingModel model);
+        void TransferResourses(ReportBindingModel model, int id);
     }
 }

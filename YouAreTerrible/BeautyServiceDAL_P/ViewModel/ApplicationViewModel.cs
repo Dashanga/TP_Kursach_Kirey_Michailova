@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BeautyModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace BeautyServiceDAL_P.ViewModel
         [DisplayName("Сумма")]
         public decimal Summa { get; set; }
         [DisplayName("Статус")]
-        public string Status { get; set; }
+        public String Status { get; set; }
         [DisplayName("Дата создания")]
         public string DateCreate { get; set; }
         [DisplayName("Дата выполнения")]

@@ -50,6 +50,7 @@
     <Compile Include="BindingModels\ServiceResourseBindingModel.cs" />
     <Compile Include="BindingModels\SkladBindingModel.cs" />
     <Compile Include="BindingModels\SkladResourseBindingModel.cs" />
+    <Compile Include="Interfaces\IApplicationService.cs" />
     <Compile Include="Interfaces\IMainService.cs" />
     <Compile Include="Interfaces\IProviderService.cs" />
     <Compile Include="Interfaces\IReportService.cs" />

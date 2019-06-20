@@ -35,6 +35,7 @@
             this.пополнитьМагазинToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.движениеРесурсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сформироватьДокументНаПередачуРусрсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +84,8 @@
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.движениеРесурсовToolStripMenuItem});
+            this.движениеРесурсовToolStripMenuItem,
+            this.сформироватьДокументНаПередачуРусрсовToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
@@ -92,8 +94,16 @@
             // движениеРесурсовToolStripMenuItem
             // 
             this.движениеРесурсовToolStripMenuItem.Name = "движениеРесурсовToolStripMenuItem";
-            this.движениеРесурсовToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.движениеРесурсовToolStripMenuItem.Size = new System.Drawing.Size(331, 22);
             this.движениеРесурсовToolStripMenuItem.Text = "Движение ресурсов";
+            this.движениеРесурсовToolStripMenuItem.Click += new System.EventHandler(this.движениеРесурсовToolStripMenuItem_Click);
+            // 
+            // сформироватьДокументНаПередачуРусрсовToolStripMenuItem
+            // 
+            this.сформироватьДокументНаПередачуРусрсовToolStripMenuItem.Name = "сформироватьДокументНаПередачуРусрсовToolStripMenuItem";
+            this.сформироватьДокументНаПередачуРусрсовToolStripMenuItem.Size = new System.Drawing.Size(331, 22);
+            this.сформироватьДокументНаПередачуРусрсовToolStripMenuItem.Text = "Сформировать документ на передачу русрсов";
+            this.сформироватьДокументНаПередачуРусрсовToolStripMenuItem.Click += new System.EventHandler(this.сформироватьДокументНаПередачуРусрсовToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -120,5 +130,6 @@
         private System.Windows.Forms.ToolStripMenuItem пополнитьМагазинToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem движениеРесурсовToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сформироватьДокументНаПередачуРусрсовToolStripMenuItem;
     }
 }
