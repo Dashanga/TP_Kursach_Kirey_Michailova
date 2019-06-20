@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="BeautyDbContext.cs" />
     <Compile Include="Implementations\MainServiceDB.cs" />
+    <Compile Include="Implementations\ProviderServiceDB.cs" />
     <Compile Include="Implementations\ReportServiceDB.cs" />
     <Compile Include="Implementations\SkladServiceDB.cs" />
     <Compile Include="Migrations\201906200745292_FirstMigration.cs" />
@@ -69,6 +70,14 @@
     <Compile Include="Migrations\201906200829527_SecondMigration.cs" />
     <Compile Include="Migrations\201906200829527_SecondMigration.Designer.cs">
       <DependentUpon>201906200829527_SecondMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906200929305_ThirdMigration.cs" />
+    <Compile Include="Migrations\201906200929305_ThirdMigration.Designer.cs">
+      <DependentUpon>201906200929305_ThirdMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906200941378_FourthMigration.cs" />
+    <Compile Include="Migrations\201906200941378_FourthMigration.Designer.cs">
+      <DependentUpon>201906200941378_FourthMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906200829527_SecondMigration.resx">
       <DependentUpon>201906200829527_SecondMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906200929305_ThirdMigration.resx">
+      <DependentUpon>201906200929305_ThirdMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906200941378_FourthMigration.resx">
+      <DependentUpon>201906200941378_FourthMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

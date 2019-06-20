@@ -24,7 +24,7 @@ namespace BeutyView
             var container = BuildUnityContainer();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(container.Resolve<FormMain>());
+            Application.Run(container.Resolve<FormLogin>());
         }
         public static IUnityContainer BuildUnityContainer()
         {
@@ -34,6 +34,7 @@ namespace BeutyView
             currentContainer.RegisterType<ISkladService, SkladServiceDB>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IMainService, MainServiceDB>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IReportService, ReportServiceDB>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IProviderService, ProviderServiceDB>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
     }

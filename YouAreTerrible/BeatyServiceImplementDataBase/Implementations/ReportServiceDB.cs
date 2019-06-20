@@ -87,7 +87,7 @@ namespace BeautyServiceImplementDataBase.Implementations
             {
                 TotalWidth = 800F
             };
-            table.SetTotalWidth(new float[] { 160, 140, 160, 100, 100, 140 });
+            table.SetTotalWidth(new float[] { 160, 140, 160, 100, 100 });
             //вставляем шапку
             PdfPCell cell = new PdfPCell();
             var fontForCellBold = new iTextSharp.text.Font(baseFont, 10,
