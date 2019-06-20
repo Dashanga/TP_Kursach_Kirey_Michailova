@@ -1,4 +1,4 @@
-namespace BeatyServiceImplementDataBase.Migrations
+namespace BeautyServiceImplementDataBase.Migrations
 {
     using System;
     using System.Data.Entity;
