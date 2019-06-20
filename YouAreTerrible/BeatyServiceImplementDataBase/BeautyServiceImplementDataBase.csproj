@@ -80,6 +80,14 @@
     <Compile Include="Migrations\201906200941378_FourthMigration.Designer.cs">
       <DependentUpon>201906200941378_FourthMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906201721088_5Migration.cs" />
+    <Compile Include="Migrations\201906201721088_5Migration.Designer.cs">
+      <DependentUpon>201906201721088_5Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906201742521_6Migration.cs" />
+    <Compile Include="Migrations\201906201742521_6Migration.Designer.cs">
+      <DependentUpon>201906201742521_6Migration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementations\ResourseServiceDB.cs" />
@@ -116,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906200941378_FourthMigration.resx">
       <DependentUpon>201906200941378_FourthMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201721088_5Migration.resx">
+      <DependentUpon>201906201721088_5Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201742521_6Migration.resx">
+      <DependentUpon>201906201742521_6Migration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

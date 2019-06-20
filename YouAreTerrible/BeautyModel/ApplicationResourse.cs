@@ -11,5 +11,6 @@ namespace BeautyModel
         public int ApplicationResourseId { get; set; }
         public int ApplicationId { get; set; }
         public int ResourseId { get; set; }
+        public virtual Application Application { get; set; }
     }
 }
